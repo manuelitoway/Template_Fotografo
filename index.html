@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>📸 Foto di Marco Rossi | Fotografo Professionista</title>
+<style>
+/* ==== RESET ==== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: #0e0e0e; color: #fff; overflow-x: hidden; }
+
+/* ==== HEADER ==== */
+header {
+  position: fixed;
+  top: 0; left: 0; width: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+  padding: 15px 50px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 1000;
+}
+header h1 { font-size: 1.5rem; color: #f1c40f; letter-spacing: 1px; }
+nav a {
+  color: #fff; text-decoration: none; margin-left: 20px;
+  transition: color 0.3s ease;
+}
+nav a:hover { color: #f1c40f; }
+
+/* ==== HERO ==== */
+.hero {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex; justify-content: center; align-items: center;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: #f1c40f;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  animation: fadeIn 2s ease;
+}
+.hero p { font-size: 1.2rem; color: #eee; }
+
+/* ==== SERVIZI ==== */
+section {
+  padding: 80px 50px;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #f1c40f;
+}
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.service-card {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(241, 196, 15, 0.2);
+}
+.service-card h3 { margin-bottom: 15px; color: #fff; }
+.service-card p { color: #ccc; font-size: 0.95rem; }
+
+/* ==== PORTFOLIO ==== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.portfolio-grid img {
+  width: 100%; height: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+.portfolio-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ==== CONTATTI ==== */
+.contact {
+  text-align: center;
+}
+.contact-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.contact-buttons a {
+  background: #f1c40f;
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.contact-buttons a:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+/* ==== FOOTER ==== */
+footer {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ==== ANIMAZIONI ==== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==== RESPONSIVE ==== */
+@media(max-width: 768px) {
+  header { padding: 15px 20px; }
+  .hero h2 { font-size: 2rem; }
+  section { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📸 Foto di Marco Rossi</h1>
+  <nav>
+    <a href="#servizi">Servizi</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h2>Fotografia che racconta emozioni</h2>
+    <p>Ritratti, eventi e momenti speciali catturati con arte e passione.</p>
+  </div>
+</section>
+
+
+<section id="servizi">
+  <h2 class="section-title">Servizi</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>Ritratti Professionali</h3>
+      <p>Scatti unici che esaltano la personalità e l’espressività del soggetto.</p>
+    </div>
+    <div class="service-card">
+      <h3>Fotografia di Eventi</h3>
+      <p>Documenta i tuoi momenti più importanti con immagini autentiche e dinamiche.</p>
+    </div>
+    <div class="service-card">
+      <h3>Servizi per Aziende</h3>
+      <p>Fotografie corporate e promozionali per raccontare la tua attività.</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2 class="section-title">Portfolio</h2>
+  <div class="portfolio-grid">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="Portfolio 1">
+    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80" alt="Portfolio 2">
+    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80" alt="Portfolio 3">
+    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80" alt="Portfolio 4">
+  </div>
+</section>
+
+<section id="contatti" class="contact">
+  <h2 class="section-title">Contatti</h2>
+  <p>Hai un progetto o un evento da immortalare? Contattami subito!</p>
+  <div class="contact-buttons">
+    <a href="https://wa.me/393401234567" target="_blank">💬 WhatsApp</a>
+    <a href="tel:+393401234567">📞 Chiama Ora</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Foto di Marco Rossi. Tutti i diritti riservati.
+</footer>
+
+<script>
+// Effetto fade-in quando si scrolla
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animation = 'fadeIn 1s forwards';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.service-card, .portfolio-grid img').forEach(el => {
+  el.style.opacity = 0;
+  observer.observe(el);
+});
+
+// Parallax hero effect
+window.addEventListener('scroll', () => {
+  const hero = document.querySelector('.hero');
+  hero.style.backgroundPositionY = `${window.scrollY * 0.4}px`;
+});
+</script>
+</body>
+</html>
